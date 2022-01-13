@@ -1,24 +1,41 @@
 <template>
-  <form action="#" method="post" id="form__post">
+  <form action="#" method="post" id="form__post" v-on:submit.prevent="submitForm">
     <label for="form__name">Наименование товара <div class="mark"></div> </label>
-    <input type="text" name="form__name" id="form__name" placeholder="Введите наименование товара">
+    <input v-model="form.product_name" type="text" name="form__name" id="form__name"
+      placeholder="Введите наименование товара">
     <label for="form__description">Описание товара</label>
-    <textarea name="form__description" id="form__description" placeholder="Введите описание товара" cols="30"
-      rows="10"></textarea>
+    <textarea v-model="form.product_description" name="form__description" id="form__description"
+      placeholder="Введите описание товара" cols="30" rows="10"></textarea>
     <label for="form__link">Ссылка на изображение товара <div class="mark"></div> </label>
-    <input type="url" name="form__link" id="form__link" placeholder="Введите ссылку">
+    <input v-model="form.product_img" type="url" name="form__link" id="form__link" placeholder="Введите ссылку">
     <label for="form__price">Цена товара<div class="mark"></div> </label>
-    <input type="number" name="form__price" id="form__price" min="0" step="0.01" placeholder="Введите цену">
-    <button type="submit" disabled>Добавить товар</button>
+    <input v-model="form.product_price" type="number" name="form__price" id="form__price" min="0" step="0.01"
+      placeholder="Введите цену">
+    <button type="submit">Добавить товар</button>
   </form>
 </template>
 
 <script>
   export default {
     name: 'Form',
-    // props: {
-    //   msg: String
-    // }
+    data() {
+      return {
+        form: {
+          product_name: '',
+          product_description: '',
+          product_img: '',
+          product_price: '',
+          product_id: ''
+        }
+      }
+    },
+    methods: {
+      submitForm() {
+        let randomId = Date.now();
+        this.form.product_id = randomId;
+        this.$store.dispatch('addToGoodList', this.form)
+      }
+    }
   }
 </script>
 
