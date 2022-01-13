@@ -1,29 +1,31 @@
 <template>
   <div class="card__list">
-    foreach
-    <Card />
+
+    <Card v-for="good of goodList" v-bind:key="good.id" v-bind:data="good" />
+
   </div>
 </template>
 
 <script>
-import Card from '@/components/Card.vue'
+  import Card from '@/components/Card.vue'
   export default {
     name: 'CardList',
     components: {
-    Card
-  }
-    // props: {
-    //   msg: String
-    // }
+      Card
+    },
+    computed: {
+      goodList() {
+        return this.$store.getters.getGoodList;
+      }
+    }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.card__list{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-left: 16px;
-}
+  .card__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 16px;
+  }
 </style>

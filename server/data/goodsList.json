@@ -1,7 +1,14 @@
 [{
-    "product_id": 123,
-    "product_name": "Наименование товара",
-    "product_description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
-    "product_price": 10000,
-    "product_img": "http://link.jpg"
-  }]
+  "product_id": 1,
+  "product_name": "Наименование товара",
+  "product_description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+  "product_price": 10000,
+  "product_img": "https://frontend-scripts.hb.bizmrg.com/unique-hf/svg/snow-logo.svg"
+},
+{
+  "product_id": 2,
+  "product_name": "Наименование товара",
+  "product_description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+  "product_price": 10000,
+  "product_img": "https://frontend-scripts.hb.bizmrg.com/unique-hf/svg/snow-logo.svg"
+}]

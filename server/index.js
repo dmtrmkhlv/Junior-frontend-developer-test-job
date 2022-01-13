@@ -3,14 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const port = 3001
-const catalog_path = path.resolve(__dirname, './data/goodsList.json');
+const goodList_path = path.resolve(__dirname, './data/goodsList.json');
 
 const app = express();
 
 app.use(express.json());
 
 app.get('/catalog', (req, res) => {
-    fs.readFile(catalog_path, 'utf8', (err, data) => {
+    fs.readFile(goodList_path, 'utf8', (err, data) => {
         res.send(data);
     })
 });
