@@ -27,5 +27,12 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin-left: 16px;
+    position: relative;
+  }
+
+  @media screen and (max-width: 720px) {
+    .card__list {
+      margin: 3% 2% 0 2%;
+    }
   }
 </style>

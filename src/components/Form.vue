@@ -11,7 +11,7 @@
     <label for="form__price">Цена товара<div class="mark"></div> </label>
     <input v-model="form.product_price" type="number" name="form__price" id="form__price" min="0" step="0.01"
       placeholder="Введите цену">
-    <button type="submit">Добавить товар</button>
+    <button type="submit" disabled>Добавить товар</button>
   </form>
 </template>
 
@@ -42,8 +42,9 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   #form__post {
-    width: 332px;
+    min-width: 332px;
     min-height: 440px;
+    height: fit-content;
     padding: 24px;
     box-sizing: border-box;
     background: #FFFEFB;
@@ -69,6 +70,11 @@
       font-size: 12px;
       line-height: 15px;
       color: #3F3F3F;
+
+      &:focus-visible {
+        outline: none;
+        border: 1px solid #7BAE73;
+      }
 
       &::placeholder {
         font-size: 12px;
@@ -117,12 +123,22 @@
       font-size: 12px;
       line-height: 15px;
       color: #FFFFFF;
+      cursor: pointer;
 
       &:disabled {
         background: #EEEEEE;
         color: #B4B4B4;
 
       }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    #form__post {
+      width: 100%;
+      margin-left: 2%;
+      margin-right: 2%;
+      min-width: unset;
     }
   }
 </style>

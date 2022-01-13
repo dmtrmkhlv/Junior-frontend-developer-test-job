@@ -11,14 +11,10 @@
 
 <script>
   export default {
-    name: 'Header',
-    // props: {
-    //   msg: String
-    // }
+    name: 'Header'
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .header {
     display: flex;
@@ -48,5 +44,13 @@
     font-size: 12px;
     line-height: 15px;
     color: #B4B4B4;
+  }
+
+  @media screen and (max-width: 720px) {
+    .header {
+      flex-wrap: wrap;
+      margin: 3% 2% 0 2%;
+      padding-top: 0;
+    }
   }
 </style>
