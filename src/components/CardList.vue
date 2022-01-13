@@ -20,5 +20,10 @@ import Card from '@/components/Card.vue'
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.card__list{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 16px;
+}
 </style>
