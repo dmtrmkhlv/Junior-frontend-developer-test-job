@@ -16,7 +16,7 @@ export default createStore({
       state.goodList = [...payload];
     },
     addToGoodList(state, payload){
-      state.goodList.push(payload);
+      state.goodList.unshift(payload);
     },
     removeFromGoodList(state, id){
       let index = state.goodList.findIndex((good) => id == good.product_id);
@@ -43,6 +43,7 @@ export default createStore({
         if(response.status == 200){
           commit('addToGoodList', good);
         }
+        return response.status;
       })
 
     },

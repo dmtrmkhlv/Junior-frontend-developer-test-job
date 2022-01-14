@@ -20,7 +20,7 @@ app.post('/catalog', (req, res) => {
     fs.readFile(goodList_path, 'utf8', (err, data) => {
         let goodList = JSON.parse(data);
         let good = req.body;
-        goodList.push(good);
+        goodList.unshift(good);
         
         fs.writeFile(goodList_path, JSON.stringify(goodList), (err) => {
             res.send(goodList);
