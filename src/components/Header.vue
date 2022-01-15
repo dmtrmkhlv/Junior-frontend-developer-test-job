@@ -1,17 +1,29 @@
 <template>
   <header class="header">
     <h1>Добавление товара</h1>
-    <select name="sortGoods" id="sortGoods" class="select__sort">
-      <option value="0">По умолчанию</option>
+    <select v-model="sortGoodsBy" @change="sortGoodList" name="sortGoods" id="sortGoods" class="select__sort">
+      <option value="default">По умолчанию</option>
+      <option value="name">По наименованию</option>
       <option value="min">По убыванию цены</option>
       <option value="max">По возрастанию цены</option>
     </select>
+
   </header>
 </template>
 
 <script>
   export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+      return {
+        sortGoodsBy: "default"
+      }
+    },
+    methods: {
+      sortGoodList() {
+        this.$store.dispatch("sortGoodsList", this.sortGoodsBy)
+      }
+    }
   }
 </script>
 

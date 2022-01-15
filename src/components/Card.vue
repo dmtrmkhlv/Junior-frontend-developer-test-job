@@ -3,7 +3,7 @@
     <img v-bind:src="data.product_img" v-bind:alt="data.product_name" />
     <p class="card__item_title">{{ data.product_name }}</p>
     <p class="card__item_desc">{{ data.product_description }}</p>
-    <p class="card__item_price">{{ data.product_price }} руб.</p>
+    <p class="card__item_price">{{ formatPrice }} руб.</p>
     <button class="card__item_button" v-on:click="onRemoveFromCatalog">
       <img src="img/delete_icon.svg" alt="X" />
     </button>
@@ -14,6 +14,15 @@
 export default {
   props: ["data"],
   name: "Card",
+  computed: {
+    formatPrice: function () {
+      let valueArr = String(this.data.product_price).split("");
+       for (let i = valueArr.length; i >= 0; i = i - 3) {
+            valueArr.splice(i, 0, " ");
+          }
+      return valueArr.join("").trim();
+    }
+  },
   methods: {
     onRemoveFromCatalog() {
       this.$store.dispatch("deleteFromeGoodList", this.data.product_id);
