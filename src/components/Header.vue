@@ -56,6 +56,11 @@
     font-size: 12px;
     line-height: 15px;
     color: #B4B4B4;
+
+    &:focus-visible {
+      outline: none;
+      border: 1px solid #7bae73;
+    }
   }
 
   @media screen and (max-width: 720px) {

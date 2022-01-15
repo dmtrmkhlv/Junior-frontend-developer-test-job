@@ -34,13 +34,14 @@ export default {
 #app {
   font-family: "Source Sans Pro", sans-serif;
   color: #3f3f3f;
-  background: rgba(255, 254, 251, 0.8);
+  background: #e5e5e5;
 }
 
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 32px;
+  background-color: #faf9f7;
 }
 
 .main {

@@ -24,7 +24,7 @@
 <style scoped lang="scss">
   .card__list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-left: 16px;
     position: relative;

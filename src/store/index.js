@@ -40,12 +40,12 @@ export default createStore({
           break;
         case "min":
           state.goodList.sort(function (a, b) {
-            return Number(a.product_price) < Number(b.product_price) ? 1 : -1;
+            return Number(a.product_price.toString().replace(/\s/g, "")) < Number(b.product_price.toString().replace(/\s/g, "")) ? 1 : -1;
           })
           break;
         case "max":
           state.goodList.sort(function (a, b) {
-            return Number(a.product_price) > Number(b.product_price) ? 1 : -1;
+            return Number(a.product_price.toString().replace(/\s/g, "")) > Number(b.product_price.toString().replace(/\s/g, "")) ? 1 : -1;
           })
           break;
       }

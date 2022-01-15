@@ -31,6 +31,10 @@
     <div v-if="this.showLoader" class="form__send">
       <img src="img/loader.gif" alt="loader">
     </div>
+    <div v-if="this.showSuccess" class="form__send">
+      <p>Товар успешно добавлен</p>
+      <button v-on:click="showSuccess = false" type="reset">Ok</button>
+    </div>
   </form>
 </template>
 
@@ -51,7 +55,8 @@
           product_img: false,
           product_price: false,
         },
-        showLoader: false
+        showLoader: false,
+        showSuccess: false
       };
     },
     computed: {
@@ -97,6 +102,7 @@
           this.$store.dispatch("addToGoodList", this.form).then((res) => {
             if (res == "200") {
               this.showLoader = false;
+              this.showSuccess = true;
 
               this.form = {
                 product_name: "",
@@ -230,6 +236,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+
+      button {
+        width: 20%;
+        margin-top: 32px;
+      }
     }
 
     button {
