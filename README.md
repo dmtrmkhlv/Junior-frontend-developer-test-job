@@ -1,5 +1,13 @@
 # junior-frontend-developer-test-job
 
+## Для запуска проекта на локальной машине необходимо запустить сервер и фронт
+```
+npm run backend
+```
+```
+npm run serve
+```
+
 ## Project setup
 ```
 npm install
