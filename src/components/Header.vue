@@ -56,6 +56,7 @@
     font-size: 12px;
     line-height: 15px;
     color: #B4B4B4;
+    cursor: pointer;
 
     &:focus-visible {
       outline: none;
